@@ -3,13 +3,12 @@
 set -e
 set -x
 
-SOURCE_DIR=~/src
-BUILD_DIR=~/build
+SOURCE_DIR=~/basic-java
 NUM_CORES=$(nproc --all)
 NUM_THREADS=$((${NUM_CORES} * 2))
 
 mkdir "${SOURCE_DIR}"
-mkdir "${BUILD_DIR}"
-#git clone --no-checkout --local --no-hardlinks file:///basic-java "${SOURCE_DIR}"
+git clone --no-hardlinks /basic-java "${SOURCE_DIR}"
+
 cd "${SOURCE_DIR}"
 echo "Success!"

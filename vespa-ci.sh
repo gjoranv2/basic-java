@@ -15,5 +15,5 @@ docker build -t "$BUILD_DOCKER_IMAGE" -f Dockerfile .
 
 rm -rf tmp; mkdir tmp
 
-docker run --rm --entrypoint /vespa-ci-internal.sh "$BUILD_DOCKER_IMAGE" \
+docker run --rm -v ${DIR}:/basic-java --entrypoint /vespa-ci-internal.sh "$BUILD_DOCKER_IMAGE" \
    2>&1 | tee vespa-ci-$(date +%Y-%m-%dT%H:%M:%S%z).log
