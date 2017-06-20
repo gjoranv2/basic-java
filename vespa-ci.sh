@@ -10,10 +10,9 @@ cd $DIR
 BUILD_DOCKER_IMAGE="vespabuild"
 CI_DOCKER_IMAGE="vespaci"
 
-docker build -t "$BUILD_DOCKER_IMAGE" -f Dockerfile.build .
+docker build -t "$BUILD_DOCKER_IMAGE" -f Dockerfile .
 
 rm -rf tmp; mkdir tmp
 
-docker build -t "$CI_DOCKER_IMAGE" -f Dockerfile.ci .
 docker run --rm --entrypoint /vespa-ci-internal.sh "$BUILD_DOCKER_IMAGE" \
    2>&1 | tee vespa-ci-$(date +%Y-%m-%dT%H:%M:%S%z).log
