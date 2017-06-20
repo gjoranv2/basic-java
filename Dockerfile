@@ -5,12 +5,14 @@ RUN yum-config-manager --add-repo https://copr.fedorainfracloud.org/coprs/g/vesp
     yum -y install epel-release && \
     yum -y install centos-release-scl && \
     yum -y install git \
-                   maven \
                    ccache \
                    rpm-build \
                    sudo && \
     echo "source /opt/rh/devtoolset-6/enable" > /etc/profile.d/devtoolset-6.sh && \
     echo "*          soft    nproc     32768" > /etc/security/limits.d/90-nproc.conf 
+
+COPY tmp/vespa.spec /vespa.spec
+RUN yum-builddep -y /vespa.spec
 
 RUN useradd --create-home -s /bin/bash vespabuilder
 WORKDIR /home/vespabuilder
