@@ -4,7 +4,8 @@ set -e
 set -x
 
 
-DIR=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
+pwd
+DIR=$(dirname $(readlink -f $0))
 cd $DIR
 
 BUILD_DOCKER_IMAGE="vespabuild"
