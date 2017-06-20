@@ -16,3 +16,5 @@ WORKDIR /home/vespabuilder
 USER vespabuilder
 
 ENV LANG en_US.UTF-8
+
+COPY vespa-ci-internal.sh /vespa-ci-internal.sh
