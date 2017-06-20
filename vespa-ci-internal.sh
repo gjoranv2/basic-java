@@ -11,4 +11,6 @@ mkdir "${SOURCE_DIR}"
 git clone --no-hardlinks /basic-java "${SOURCE_DIR}"
 
 cd "${SOURCE_DIR}"
+MAVEN_OPTS="-Xms128m -Xmx512m" mvn -T ${NUM_THREADS} install
+
 echo "Success!"
