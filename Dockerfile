@@ -5,6 +5,7 @@ RUN yum-config-manager --add-repo https://copr.fedorainfracloud.org/coprs/g/vesp
     yum -y install epel-release && \
     yum -y install centos-release-scl && \
     yum -y install git \
+                   maven \
                    ccache \
                    rpm-build \
                    sudo && \
