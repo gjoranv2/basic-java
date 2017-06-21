@@ -4,7 +4,10 @@ set -e
 set -x
 
 pwd
-DIR=$(cd $(dirname $0) && pwd)
+
+RELATIVE_DIR=$(dirname "${BASH_SOURCE[0]}")
+DIR=$(cd "${RELATIVE_DIR}" && pwd)
+
 cd $DIR
 
 BUILD_DOCKER_IMAGE="vespabuild"
