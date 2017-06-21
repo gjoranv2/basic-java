@@ -4,7 +4,7 @@ sudo: required
 services:
   - docker
 
-script: "sh ./vespa-ci.sh"
+script: "sh docker/vespa-ci.sh"
 
 # skip install step and rely on script command instead
 install: true
