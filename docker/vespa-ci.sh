@@ -3,9 +3,8 @@
 set -e
 set -x
 
-
 pwd
-DIR=$(dirname $(readlink -f $0))
+DIR=$(cd $(dirname $0) && pwd)
 cd $DIR
 
 BUILD_DOCKER_IMAGE="vespabuild"
