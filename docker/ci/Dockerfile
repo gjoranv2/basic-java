@@ -10,4 +10,4 @@ USER vespabuilder
 
 ENV LANG en_US.UTF-8
 
-COPY vespa-ci-internal.sh /vespa-ci-internal.sh
+COPY ci/vespa-ci-internal.sh /vespa-ci-internal.sh
