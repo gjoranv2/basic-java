@@ -12,3 +12,8 @@ script: "docker/vespa-ci.sh"
 
 # skip install step and rely on script command instead
 install: true
+
+# Cache maven artifacts between builds
+cache:
+  directories:
+  - $HOME/.m2
